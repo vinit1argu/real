@@ -20,9 +20,11 @@ table {
     padding: 8px; 
   }
 
-  .action-button {
-    margin-right: 10px; /* Adjust the margin as needed */
-  }
+.action{
+  margin-right: 20px;
+}
 
-
+.act{
+   width:200px;
+}
   

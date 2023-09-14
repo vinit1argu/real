@@ -1,1 +1,32 @@
-<p>sidebar works!</p>
+<nav id="sidebar" [ngClass]="{ 'active': isSidebarExpanded }">
+    <div class="position-sticky">
+      <!-- Sidebar content -->
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+             Profile
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+               Orders
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+               Logout
+            </a>
+          </li>
+        <!-- Add more sidebar items here -->
+      </ul>
+      <button class="btn btn-primary toggle-button" (click)="toggleSidebar()">
+        <i class="fas" [ngClass]="isSidebarExpanded ? 'fa-chevron-left' : 'fa-chevron-right'"></i>
+      </button>
+    </div>
+  </nav>
+  
