@@ -1,0 +1,36 @@
+
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+   
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr *ngFor="let person of people">
+            <td>{{ person.id }}</td>
+            <td>{{ person.name }}</td>
+            <td>{{ person.address }}</td>
+            <td>{{ person.dob }}</td> 
+            <td>{{ person.gender }}</td>
+            <td>
+                <i class='fas fa-edit fa-lg'>fa-lg</i><br/>
+              <button (click)="editPerson(person)" class="action-button">Edit</button>
+              <button (click)="viewPerson(person)" class="action-button">View</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      
+
+
+  </div>
