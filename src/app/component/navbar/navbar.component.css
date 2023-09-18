@@ -1,0 +1,21 @@
+.cha{
+padding-left: 20px;
+
+}
+
+.ch{
+    background-color: #e4ef48ae;
+    /* background-color: rgba(0, 234, 255, 0.529); */
+    margin-top: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+svg{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.vh{
+    margin-left: auto;
+}
