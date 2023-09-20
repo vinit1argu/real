@@ -1,1 +1,39 @@
-<p>edit works!</p>
+<div class="form">
+    <h4 id="registration">Your Detail</h4>
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+  
+        <div ngModelGroup="personDetails" #personalDetail="ngModelGroup">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name.."
+          name="name" ngModel required #fname="ngModel">
+          
+          <label for="address">Address</label>
+          <input type="textarea" id="address" name="address" placeholder="Your address.."
+          name="address" ngModel>
+
+          <label for="dob">DOB</label>
+          <input type="date" id="dob" name="dob">
+
+          <label for="role">Role</label>
+          <input type="text" id="role" name="role" placeholder="Your role.."
+          name="role" ngModel>
+
+          <label for="number">Phone No.</label>
+          <input type="number" id="number" name="number">
+         
+        </div>
+        
+       <br>
+        <label for="gender">Gender:</label>
+        <span class="jh" *ngFor="let gen of gender">
+          <input type="radio" id="{{gen.id}}" value="{{gen.value}}" name="gender" >
+          <label for="male">{{gen.value}}</label>
+        </span>
+
+        <br><br>
+      
+        <input type="submit" value="Update" id="btn">
+      </form>
+  </div>
+  
+ 
