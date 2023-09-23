@@ -13,4 +13,9 @@ export class DataService {
   getPosts(): Observable<any[]>{
     return this.http.get<any[]>(`${this.apiUrl}/people`);
   }
+
+  getDataForEdit(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/people/${id}`);
+  }
+
 }

@@ -6,7 +6,7 @@ import { ViewComponent } from './component/view/view.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'edit' ,component:EditComponent},
+  {path:'edit/:id' ,component:EditComponent},
   {path:'view' , component:ViewComponent}
 ];
 
