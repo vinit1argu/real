@@ -13,11 +13,30 @@ export class HomeComponent implements OnInit {
 
   constructor(private dataService: DataService){}
   ngOnInit(): void{
-    this.dataService.getPosts().subscribe((data) => {
-      this.people= data;
-    })
+   
+    this.fetchData();
 
   }
+    // this.dataService.getPosts().subscribe((data) => {
+    //   this.people= data;
+    // })
+
+
+    fetchData() {
+      this.dataService.getPosts().subscribe(
+        (response) => {
+          console.log("DATA = ", response);
+          
+          this.people = response;
+        },
+        (error) => {
+          console.error('Error fetching data:', error);
+        }
+      )
+    }
+  
+
+  
 
 
   // people = [

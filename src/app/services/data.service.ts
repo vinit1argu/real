@@ -4,18 +4,19 @@ import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
+  
 })
 export class DataService {
   private apiUrl = 'http://localhost:3000';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {}
 
-  getPosts(): Observable<any[]>{
-    return this.http.get<any[]>(`${this.apiUrl}/people`);
+  getPosts(){
+    return this.http.get<any[]>(`${this.apiUrl}/get`);
   }
 
-  getDataForEdit(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/people/${id}`);
+  getDataForEdit(id: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/get/${id}`);
   }
 
 }

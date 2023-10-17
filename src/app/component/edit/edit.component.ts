@@ -19,6 +19,7 @@ export class EditComponent implements OnInit {
 
 
   item: any={};
+  id:string = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -28,19 +29,16 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.dataService.getDataForEdit(+params['id']).subscribe((data) => {
-        this.item = data;
-        // console.log(data);
-      });
+      this.id=params['id'];
+      this.dataService.getDataForEdit(this.id).subscribe((response) => {
+        this.item = response;
+        // console.log(response);
+      },
+      (error)=>{
+        console.error('Error fetching data by ID:', error);
+      })
     })
 
-      
-    // this.route.params.subscribe((params) => {
-    //   const id = params['id']; 
-    //   this.dataService.getDataForEdit(+id).subscribe((data) => {
-    //     this.item = data;
-    //     // console.log(data);
-    //   });
-    // });
+
 }
 }
